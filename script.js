@@ -2,13 +2,13 @@
 
 let arr = [1,2,3,4]
 
-let oddNum = arr.filter((val)=>{
-	return val%2!=0;
+let evenNum = arr.filter((val)=>{
+	return val%2==0;
 });
 
 
 
-let evenNum = arr.filter((val)=>{
+let evenMultNum = arr.filter((val)=>{
 	return val%2==0;
 }).map((val)=>{
 	return val*2;
@@ -28,18 +28,18 @@ promise.then((arr)=>{
 	outputBox.innerText = (arr);
 	return new Promise((resolve)=>{
 		setTimeout(()=>{
-		resolve(oddNum);
-	   },1000)
-	})
-})
-.then((oddNum)=>{
-	outputBox.innerText = (oddNum);
-	return new Promise((resolve)=>{
-		setTimeout(()=>{
 		resolve(evenNum);
-	   },2000)
+	   },1000)
 	})
 })
 .then((evenNum)=>{
 	outputBox.innerText = (evenNum);
+	return new Promise((resolve)=>{
+		setTimeout(()=>{
+		resolve(evenMultNum);
+	   },2000)
+	})
+})
+.then((evenMultNum)=>{
+	outputBox.innerText = (evenMultNum);
 })
